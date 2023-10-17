@@ -2,9 +2,7 @@ import { useState } from "react";
 
 function App() {
   const [mySearch, setMySearch] = useState('');
-
   
-
   const APP_ID = '9f2ce7f8';
   const APP_KEY = 'eafe05ea80ecc55f5fa4579c1e59d5e6';
   const APP_URL = 'https://api.edamam.com/api/nutrition-details'
