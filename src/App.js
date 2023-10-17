@@ -38,7 +38,9 @@ function myRecipeSearch(e){
       placeholder="Введите коллтчество и наименование продукта"
       value={mySearch}
       />
-        <button></button>
+        <button>
+
+        </button>
       </form>
     </div>
   );
