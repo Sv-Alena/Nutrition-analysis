@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const [mySearch, setMySearch] = useState('');
@@ -7,7 +7,8 @@ function App() {
   const APP_KEY = 'eafe05ea80ecc55f5fa4579c1e59d5e6';
   const APP_URL = 'https://api.edamam.com/api/nutrition-details'
 
-// Не получается применить consol.log чтоб увидеть содержимое ссылки
+// Не получается применить consol.log чтоб увидеть содержимое ссылки, я не пойму куда мне его поставить
+console.log(`${APP_URL}?app_id=${APP_ID}&app_key=${APP_KEY}`)
 
 const fetchData = async() => {
     const response = await fetch(`${APP_URL}?app_id=${APP_ID}&app_key=${APP_KEY}`, {
@@ -20,11 +21,18 @@ const fetchData = async() => {
       body: JSON.stringify()
     })
   }
+          
 
+  useEffect(() => {
+    
+      fetchData();
+  }, [])
+ 
 // function onFormSubmit(e){
 // e.priventDefault();
 // setWordSubmitted()
 // }
+    
 
 function myRecipeSearch(e){
   console.log(e.target.value);
@@ -35,7 +43,7 @@ function myRecipeSearch(e){
       <form>
       <input
       onChange={myRecipeSearch}
-      placeholder="Введите коллтчество и наименование продукта"
+      placeholder="Введите колличество и наименование продукта"
       value={mySearch}
       />
         <button>
