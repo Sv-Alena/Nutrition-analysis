@@ -7,7 +7,7 @@ function App() {
   const APP_KEY = 'eafe05ea80ecc55f5fa4579c1e59d5e6';
   const APP_URL = 'https://api.edamam.com/api/nutrition-details'
 
-// Не получается применить consol.log чтоб увидеть содержимое ссылки, я не пойму куда мне его поставить
+
 console.log(`${APP_URL}?app_id=${APP_ID}&app_key=${APP_KEY}`)
 
 const fetchData = async() => {
@@ -15,7 +15,7 @@ const fetchData = async() => {
       
       method: "POST",
       headers: {
-        'Accept': 'application/json',      //не пойму откуда это, в учебнике не видела
+        'Accept': 'application/json',      
         'Content-Type': 'application/json',
       },
       body: JSON.stringify()
